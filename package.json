@@ -1,6 +1,6 @@
 {
   "name": "webpack-build-info",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "webpack-plugin - Display build information on the browser console",
   "main": "index.js",
   "repository": "https://github.com/Dolov/webpack-build-info",
@@ -8,9 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "peerDependencies": {
-    
-  },
+  "peerDependencies": {},
   "author": "",
   "license": "ISC"
 }
