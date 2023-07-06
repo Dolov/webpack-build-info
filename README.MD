@@ -13,7 +13,7 @@ const WebpackBuildInfo = require("webpack-build-info")
   plugins: [
     new WebpackBuildInfo(),
 
-    // 自定义
+    // 支持自定义打印格式
     new WebpackBuildInfo({
       format(info) {
         return `console.log('${info.gitInfo} - ${info.startTime} - ${info.endTime}')`
@@ -27,4 +27,4 @@ const WebpackBuildInfo = require("webpack-build-info")
 
 ```
 
-![img](screenshots/WechatIMG337.jpg)
+![img](screenshots/WechatIMG338.jpg)
