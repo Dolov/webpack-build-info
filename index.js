@@ -5,8 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const getGitInfo = () => {
 	try {
 		const version = child_process.execSync('git branch --v', {
-      encoding: 'utf8'
-    });
+			encoding: 'utf8'
+		});
 		return version.replace('\n', '').slice(1)
 	} catch (error) {
 		return null
@@ -16,8 +16,8 @@ const getGitInfo = () => {
 class WebpackBuildInfo {
 
 	constructor(options = {}) {
-    this.options = options
-  }
+		this.options = options
+	}
 
 	apply(compiler) {
 
@@ -40,8 +40,9 @@ class WebpackBuildInfo {
 				script += `console.log("%c构建结束时间", "color: #13c2c2; text-decoration: underline;font-weight: 900;", '${endTime}');`
 
 				/** 自定义日志格式 */
-				if (this.options.format) {
-					script = format({
+				const formatLog = this?.options?.format
+				if (formatLog) {
+					script = formatLog({
 						gitInfo,
 						startTime,
 						endTime,
