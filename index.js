@@ -21,6 +21,7 @@ class WebpackBuildInfo {
 
 	apply(compiler) {
 
+		const { format, scriptId = "webpack-build-info" } = this.options
 		const gitInfo = getGitInfo()
 
 		/** 构建开始时间 */
@@ -40,8 +41,7 @@ class WebpackBuildInfo {
 				script += `console.log("%c构建结束时间", "color: #13c2c2; text-decoration: underline;font-weight: 900;", '${endTime}');`
 
 				/** 自定义日志格式 */
-				const formatLog = this?.options?.format
-				if (formatLog) {
+				if (format) {
 					script = formatLog({
 						gitInfo,
 						startTime,
@@ -50,7 +50,7 @@ class WebpackBuildInfo {
 				}
 
 				// 修改 HTML 内容
-				data.html += `<script>${script}</script>`;
+				data.html += `<script id='${scriptId}'>${script}</script>`;
 				cb(null, data);
 			});
 		})
