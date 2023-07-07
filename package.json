@@ -1,6 +1,6 @@
 {
   "name": "webpack-build-info",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "webpack-plugin - Display build information on the browser console",
   "main": "index.js",
   "repository": "https://github.com/Dolov/webpack-build-info",
